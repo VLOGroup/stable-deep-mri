@@ -1,0 +1,15 @@
+{
+  "data": "mr",
+  "batch_size": 50,
+  "im_sz": 320,
+  "im_ch": 1,
+  "data_epsilon": 1.5e-2,
+  "stages": 6,
+  "n_f": 48,
+  "f_mul": 1.75,
+  "epsilon": 7.5e-3,
+  "K": 500,
+  "replay_size": 8000,
+  "lr": 5e-5,
+  "pot": "abs"
+}
