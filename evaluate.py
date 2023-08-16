@@ -632,12 +632,12 @@ def generate_trajectories():
             ims[i // each] = x[:, 0]
 
     _ = sampling.ula(f, lambda x: R.grad(x)[1], n=N, callback=callback)
-    th.save(ims, Path('./out') / 'mri' / 'trajectories' / 'trajectories.pth')
+    th.save(ims, Path('./evaluation') / 'trajectories' / 'trajectories.pth')
 
 
 def visualize_trajectories():
     R = utils.mr_model()
-    path = Path('./out') / 'mri' / 'trajectories'
+    path = Path('./evaluation') / 'trajectories'
     trajs = th.load(path / 'trajectories.pth',
                     map_location='cpu').permute(1, 0, 2, 3)
     steps = 100
@@ -740,15 +740,18 @@ subsampling_patterns = [
 if __name__ == '__main__':
     th.manual_seed(0)
     with th.no_grad():
-        # visualize_trajectories()  # Fig. 2
-        single_coil_synthetic()  # Tab. 1, Fig. 3
+        visualize_trajectories()  # Fig. 2
+        # single_coil_synthetic()  # Tab. 1, Fig. 3
         # diffusion_comparison()  # Tab. 2, Fig. 9
         # for pattern in subsampling_patterns:  # Tab. 3, Fig. 4 and 5
         #     parallel_imaging(pattern, True)
         # null_space_residual()  # Fig. 7
         # histogram_regression(True)  # Fig. 8
+
+        # Calibration stuff
         # regress_lamda(which='fs')
         # postprocess_lambda_regression()
         # spline_regression(False)
-        # synthetic_posterior_sampling()
-        pass
+
+        # Generating the trajectories used in Fig. 2
+        # generate_trajectories()
