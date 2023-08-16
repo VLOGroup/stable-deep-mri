@@ -1,4 +1,4 @@
-![Stable Deep MRI Reconstruction](./assets/sketch.pdf)
+![Stable Deep MRI Reconstruction](./assets/sketch.png)
 # Stable Deep MRI Reconstruction
 This repository contains the code of [Stable Deep MRI Reconstruction using Generative Priors](https://arxiv.org/pdf/2210.13834.pdf).
 
