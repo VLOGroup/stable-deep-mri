@@ -2,9 +2,6 @@
 # Stable Deep MRI Reconstruction
 This repository contains the code of [Stable Deep MRI Reconstruction using Generative Priors](https://arxiv.org/pdf/2210.13834.pdf).
 
-## Data
-Pretrained models and other data needed for evaluation can be found [here](https://files.icg.tugraz.at/d/573098a94ecc4710b80e/).
-
 ## Usage
 The framework assumes the environment variables `EXPERIMENTS_ROOT` (needed for training) and `DATASETS_ROOT` (needed for training and evaluation) to be set.
 `EXPERIMENTS_ROOT` is the output base-directory for training can be any directory on the machine.
@@ -17,4 +14,4 @@ The first argument is the experiment output directory, i.e. checkpoints and loss
 ### Evaluation
 All evaluation code is found in `evaluate.py`.
 The `if __name__ == '__main__':` block lists evaluation functions along with annotations indicating the corresponding table or figure in the paper.
-
+Pretrained models and other data needed for evaluation can be found [here](https://files.icg.tugraz.at/d/573098a94ecc4710b80e/).
